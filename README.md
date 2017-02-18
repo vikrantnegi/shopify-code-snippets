@@ -52,7 +52,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 
 ## Display Articles in a Blog
 ```html
-{% for article in blogs.journal.articles limit:1 %}
+{% for article in blogs.blog-name.articles limit:1 %}
   <li class="article">
     <img src="{% if article.image %}{{ article | img_url: 'medium' }}{% endif %}" alt="" >
     <a class="title" href="{{ article.url }}">{{ article.title }}</a>
