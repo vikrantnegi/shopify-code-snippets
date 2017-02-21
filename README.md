@@ -7,6 +7,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Show More Products from a Vendor](#show-more-products-from-a-vendor)
 * [Display Articles in a Blog](#display-articles-in-a-blog)
 * [Display Links in a Linklist](#display-links-in-a-linklist)
+* [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
 
 
 ## Display Products in a Collection
@@ -62,7 +63,6 @@ This is a list of useful Shopify Snippets that I often reference while developin
 {% endfor %}
 ```
 
-
 ## Display Links in a Linklist
 ```html
 <ul class="list">
@@ -71,4 +71,16 @@ This is a list of useful Shopify Snippets that I often reference while developin
   {% endfor %}
 </ul>
 ```
+
+## Back or Continue Shopping link on Cart
+#### To link to Catalog page at /collection/all
+```html
+<a href="/collections/all" title="Browse our Catalog">Continue Shopping</a>
+```
+#### To Collection the product was last added to cart
+```html
+<a href="{{ cart.items.first.product.collections.first.url }}" title="Continue Shopping">Continue Shopping</a>
+```
+
+
 
