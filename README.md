@@ -8,12 +8,13 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Display Articles in a Blog](#display-articles-in-a-blog)
 * [Display Links in a Linklist](#display-links-in-a-linklist)
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
+* [Add Class or Id to Form](#add-class-or-id-to-form)
 
 
 ## Display Products in a Collection
 ```html
 <div class="grid">
-  <h3 class="text-center avenir-head">Products</h3>
+  <h3 class="text-center">Products</h3>
   {% for product in collections.collection-name.products %}
     <div class="grid__item medium-up--one-third">
         <a href="{{ product.url }}"><img src="{{ product.featured_image | product_img_url: '345x' }}" alt="{{ product.title | escape  }}" /></a>
@@ -80,6 +81,11 @@ This is a list of useful Shopify Snippets that I often reference while developin
 #### To Collection the product was last added to cart
 ```html
 <a href="{{ cart.items.first.product.collections.first.url }}" title="Continue Shopping">Continue Shopping</a>
+```
+
+## Add Class or Id to Form
+```html
+{% form 'form_name', class: 'custom-class-name' %}
 ```
 
 
