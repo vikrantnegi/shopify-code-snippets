@@ -85,7 +85,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 
 ## Add Class or Id to Form
 ```html
-{% form 'form_name', class: 'custom-class-name' %}
+{% form 'form_name', class: 'custom-class-name', id: 'custom-id-name' %}
 ```
 
 
