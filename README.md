@@ -9,6 +9,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Display Links in a Linklist](#display-links-in-a-linklist)
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
 * [Add Class or Id to Form](#add-class-or-id-to-form)
+* [Add Icon or Image on Products with "new" Tag](#add-icon-or-image-on-products-with-new-tag)
 
 
 ## Display Products in a Collection
@@ -88,5 +89,12 @@ This is a list of useful Shopify Snippets that I often reference while developin
 {% form 'form_name', class: 'custom-class-name', id: 'custom-id-name' %}
 ```
 
-
+## Add Icon or Image on Products with "new" Tag
+```html
+{% for mytag in product.tags %}
+  {% if mytag == 'new' %}
+    <a href="{{product.url}}"><img class="new-product" src="{{ 'new-circle.png' | asset_url }}"/ ></a>
+  {% endif %}
+{% endfor %}
+```
 
