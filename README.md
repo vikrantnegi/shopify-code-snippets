@@ -10,6 +10,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
 * [Add Class or Id to Form](#add-class-or-id-to-form)
 * [Add Icon or Image on Products with "new" Tag](#add-icon-or-image-on-products-with-new-tag)
+* [Insert Block inside a for loop at any position](#insert-block-inside-a-for-loop-at-any-position)
 
 
 ## Display Products in a Collection
@@ -98,3 +99,19 @@ This is a list of useful Shopify Snippets that I often reference while developin
 {% endfor %}
 ```
 
+## Insert Block inside a for loop at any position
+This code inserts "new-block" div at position 4.
+```html
+  {% for block in section.blocks %}
+    <div class="repeating-block">
+      <a href="#" class="link">
+        <img src="#" alt="Dummy">
+      </a>
+    </div>
+    {% if forloop.index0 == 3 %}
+      <div class="new-block">
+        <img src="#" alt="Dummy">
+      </div>
+    {% endif %}
+  {% endfor %}
+```
