@@ -12,6 +12,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Add Custom Badge on Products using product tag](#add-custom-badge-on-products-using-product-tag)
 * [Add On Sale Badge on Products Based on Price](#add-on-sale-badge-on-products-based-on-price)
 * [Insert Block inside a for loop at any position](#insert-block-inside-a-for-loop-at-any-position)
+* [Open External links in New Tab](#open-external-links-in-new-tab)
 
 
 ## Display Products in a Collection
@@ -125,4 +126,11 @@ This code inserts "new-block" div at position 4.
       </div>
     {% endif %}
   {% endfor %}
+```
+
+## Open External links in New Tab
+```javascript
+$(document).ready( function() {
+  jQuery('a[href^="http"]').not('a[href^="'+$(location).attr('hostname')+'"]').attr('target', '_blank');
+});
 ```
