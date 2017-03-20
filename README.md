@@ -10,6 +10,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
 * [Add Class or Id to Form](#add-class-or-id-to-form)
 * [Add Custom Badge on Products using product tag](#add-custom-badge-on-products-using-product-tag)
+* [Add On Sale Badge on Products Based on Price](#add-on-sale-badge-on-products-based-on-price)
 * [Insert Block inside a for loop at any position](#insert-block-inside-a-for-loop-at-any-position)
 
 
@@ -98,6 +99,15 @@ This code adds a limited badge on products with "limited" tag on them. Add this 
     <img class="limited-badge" src="{{ 'limited-badge.png' | asset_url }}" alt="Limited Badge">
   {% endif %}
 {% endfor %}
+```
+
+## Add On Sale Badge on Products Based on Price
+* Products must have "Compare at price" field fill in admin. 
+* Shows Badge when "compare_at_price_max" > "product price"
+```html
+{% if product.compare_at_price_max > product.price %}
+  <img class="sale-product" src="{{ 'sale-badge.png' | asset_url }}" alt="On Sale Badge">
+{% endif %}
 ```
 
 ## Insert Block inside a for loop at any position
