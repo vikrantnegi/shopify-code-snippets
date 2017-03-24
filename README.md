@@ -34,7 +34,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 {% for product in collections.collection-name.products %}
   <div class="grid">
    {% for variant in product.variants %}
-      <! -- some html product box layout here -->
+      <!-- some html product box layout here -->
       {% include 'product-card-grid', grid_image_width: image_size, product: variant %}
    {% endfor %}
   </div>
