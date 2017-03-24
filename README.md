@@ -3,6 +3,7 @@
 This is a list of useful Shopify Snippets that I often reference while developing Shopify themes. Feel Free to contribute.
 
 * [Display Products in a Collection](#display-products-in-a-collection)
+* [Display Variants in a Product](#display-variants-in-a-product)
 * [Calculate Discount on Products](#calculate-discount-on-products)
 * [Show More Products from a Vendor](#show-more-products-from-a-vendor)
 * [Display Articles in a Blog](#display-articles-in-a-blog)
@@ -26,6 +27,18 @@ This is a list of useful Shopify Snippets that I often reference while developin
      </div>
   {% endfor %}
 </div>
+```
+
+## Display Variants in a Product
+```html
+{% for product in collections.collection-name.products %}
+  <div class="grid">
+   {% for variant in product.variants %}
+      <! -- some html product box layout here -->
+      {% include 'product-card-grid', grid_image_width: image_size, product: variant %}
+   {% endfor %}
+  </div>
+{% endfor %}
 ```
 
 ## Calculate Discount on Products
