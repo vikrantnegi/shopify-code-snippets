@@ -14,7 +14,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Add On Sale Badge on Products Based on Price](#add-on-sale-badge-on-products-based-on-price)
 * [Insert Block inside a for loop at any position](#insert-block-inside-a-for-loop-at-any-position)
 * [Open External links in New Tab](#open-external-links-in-new-tab)
-
+* [Add Original Price of Discounted products on Cart Page](#add-original-price-of-discounted-products-on-cart-page)
 
 ## Display Products in a Collection
 ```html
@@ -146,4 +146,12 @@ This code inserts "new-block" div at position 4.
 $(document).ready( function() {
   jQuery('a[href^="http"]').not('a[href^="'+$(location).attr('hostname')+'"]').attr('target', '_blank');
 });
+```
+
+## Add Original Price of Discounted products on Cart Page
+Inset the following code inside items loop in cart template.
+```html
+{% if item.product.compare_at_price > item.price %}
+  <s>{{ item.product.compare_at_price | money }}</s>
+{% endif %}
 ```
