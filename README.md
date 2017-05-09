@@ -14,6 +14,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Display Variants in a Product](#display-variants-in-a-product)
 * [Insert Block inside a for loop at any position](#insert-block-inside-a-for-loop-at-any-position)
 * [Open External links in New Tab](#open-external-links-in-new-tab)
+* [Recommend related products](https://help.shopify.com/themes/customization/products/recommend-related-products)
 * [Show More Products from a Vendor](#show-more-products-from-a-vendor)
 
 ## Add Custom Badge on Products using product tag
