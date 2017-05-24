@@ -8,6 +8,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Add On Sale Badge on Products Based on Price](#add-on-sale-badge-on-products-based-on-price)
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
 * [Calculate Discount on Products](#calculate-discount-on-products)
+* [Call a Product on any page](#call-a-product-on-any-page)
 * [Display Articles in a Blog](#display-articles-in-a-blog)
 * [Display Links in a Linklist](#display-links-in-a-linklist)
 * [Display Products in a Collection](#display-products-in-a-collection)
@@ -66,6 +67,12 @@ Inset the following code inside items loop in cart template.
 {% endcapture %}
   <span class="discount">OFF: {{ discount }}</span>
 ```
+
+## Call a Product on any page
+```html
+{%- assign product = all_products['product-handle'] -%}
+```
+Then do anything with product object like ```{{ product.title }}```
 
 ## Display Articles in a Blog
 ```html
