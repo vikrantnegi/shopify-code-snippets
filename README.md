@@ -11,6 +11,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Call a Product on any page](#call-a-product-on-any-page)
 * [Display Articles in a Blog](#display-articles-in-a-blog)
 * [Display Links in a Linklist](#display-links-in-a-linklist)
+* [Display all tags in a blog](#display-all-tags-in-a-blog)
 * [Display Products in a Collection](#display-products-in-a-collection)
 * [Display Variants in a Product](#display-variants-in-a-product)
 * [Insert Block inside a for loop at any position](#insert-block-inside-a-for-loop-at-any-position)
@@ -93,6 +94,13 @@ Then do anything with product object like ```{{ product.title }}```
      <li>{{ link.title | link_to: link.url }}</li>
   {% endfor %}
 </ul>
+```
+
+## Display all tags in a blog
+```html
+{% for tag in blog.all_tags %}
+  <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+{% endfor %}
 ```
 
 ## Display Products in a Collection
