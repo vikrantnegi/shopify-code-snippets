@@ -83,6 +83,7 @@ Then do anything with product object like ```{{ product.title }}```
     <a class="title" href="{{ article.url }}">{{ article.title }}</a>
     <a class="date" href="{{ article.url }}">{{ article.published_at | date: "%B %d, %Y" }}</a>
     <div class="rte content">{{ article.excerpt_or_content }}</div>
+    <a href="{{ article.url }}" class="featured-projects__link">{{ 'blogs.article.read_more' | t }}</a>
   </li>
 {% endfor %}
 ```
