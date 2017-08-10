@@ -18,6 +18,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Open External links in New Tab](#open-external-links-in-new-tab)
 * [Recommend related products](https://help.shopify.com/themes/customization/products/recommend-related-products)
 * [Show More Products from a Vendor](#show-more-products-from-a-vendor)
+* [Strip empty tags from article excerpt](#strip-empty-tags-from-article-excerpt)
 
 ## Add Custom Badge on Products using product tag
 This code adds a limited badge on products with "limited" tag on them. Add this in product template.
@@ -43,7 +44,7 @@ Inset the following code inside items loop in cart template.
 ```
 
 ## Add On Sale Badge on Products Based on Price
-* Products must have "Compare at price" field fill in admin. 
+* Products must have "Compare at price" field fill in admin.
 * Shows Badge when "compare_at_price_max" > "product price"
 ```html
 {% if product.compare_at_price_max > product.price %}
@@ -172,3 +173,12 @@ $(document).ready( function() {
   {% endfor %}
 </div>
 ```
+
+## Strip empty tags from article excerpt
+Strip out empty p and span tags
+```html
+{{ article.excerpt | strip_html }}
+```
+
+
+
