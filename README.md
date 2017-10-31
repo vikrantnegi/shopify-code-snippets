@@ -4,6 +4,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 
 * [Add Custom Badge on Products using product tag](#add-custom-badge-on-products-using-product-tag)
 * [Add Class or Id to Form](#add-class-or-id-to-form)
+* [Add page numbers to pagination](#add-page-numbers-to-pagination)
 * [Add Original Price of Discounted products on Cart Page](#add-original-price-of-discounted-products-on-cart-page)
 * [Add On Sale Badge on Products Based on Price](#add-on-sale-badge-on-products-based-on-price)
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
@@ -33,6 +34,16 @@ This code adds a limited badge on products with "limited" tag on them. Add this 
 ## Add Class or Id to Form
 ```html
 {% form 'form_name', class: 'custom-class-name', id: 'custom-id-name' %}
+```
+
+## Add page numbers to pagination
+```html
+{% assign count = paginate.pages %}
+{% for part in (1..count) %}
+  <li class="{% if paginate.current_page == part %} active {% endif %}">
+    <a href="{{ collection.url }}?page={{ forloop.index }}">{{ forloop.index }}</a>
+  </li>
+{% endfor %}
 ```
 
 ## Add Original Price of Discounted products on Cart Page
