@@ -1,0 +1,6 @@
+{% capture my_supa_pagination_variable %}
+{{ paginate | default_pagination }}
+{% endcapture %}
+<div id="paginate" class="paginate">
+  {{ my_supa_pagination_variable }}
+</div>

@@ -10,6 +10,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
 * [Calculate Discount on Products](#calculate-discount-on-products)
 * [Call a Product on any page](#call-a-product-on-any-page)
+* [Custom Pagination](#custom-pagination)
 * [Display Articles in a Blog](#display-articles-in-a-blog)
 * [Display Links in a Linklist](#display-links-in-a-linklist)
 * [Display all tags in a blog](#display-all-tags-in-a-blog)
@@ -86,6 +87,15 @@ Inset the following code inside items loop in cart template.
 {%- assign product = all_products['product-handle'] -%}
 ```
 Then do anything with product object like ```{{ product.title }}```
+
+## Custom Pagination
+Add `pagination-count` and `pagination-tabs` from the snippet folder to your Shopify Theme Snippet folder
+```liquid
+{% if paginate.pages > 1 %}
+  {% include 'pagination-count' %}
+  {% include 'pagination-tabs' %}
+{% endif %}
+```
 
 ## Display Articles in a Blog
 ```html
