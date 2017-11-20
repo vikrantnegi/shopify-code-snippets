@@ -8,6 +8,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Add Original Price of Discounted products on Cart Page](#add-original-price-of-discounted-products-on-cart-page)
 * [Add On Sale Badge on Products Based on Price](#add-on-sale-badge-on-products-based-on-price)
 * [Back or Continue Shopping link on Cart](#back-or-continue-shopping-link-on-cart)
+* [Blog Category Filter Dropdown](#blog-category-filter-dropdown)
 * [Calculate Discount on Products](#calculate-discount-on-products)
 * [Call a Product on any page](#call-a-product-on-any-page)
 * [Custom Pagination](#custom-pagination)
@@ -72,6 +73,18 @@ Inset the following code inside items loop in cart template.
 #### To Collection the product was last added to cart
 ```html
 <a href="{{ cart.items.first.product.collections.first.url }}" title="Continue Shopping">Continue Shopping</a>
+```
+
+## Blog Category Filter Dropdown
+```html
+{% if blog.tags.size > 0 %}
+  <select id="BlogTagFilter">
+    <option value="/blogs/{{ blog.handle }}">{{ 'blogs.article.all_topics' | t }}</option>
+    {% for tag in blog.all_tags %}
+      <option value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
+    {% endfor %}
+  </select>
+{% endif %}
 ```
 
 ## Calculate Discount on Products
