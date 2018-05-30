@@ -214,5 +214,7 @@ Strip out empty p and span tags
 {{ article.excerpt | strip_html }}
 ```
 
+## License
 
+Licensed under the [MIT](https://github.com/vikrantnegi/shopify-code-snippets/blob/master/LICENSE).
 
