@@ -22,6 +22,7 @@ This is a list of useful Shopify Snippets that I often reference while developin
 * [Recommend related products](https://help.shopify.com/themes/customization/products/recommend-related-products)
 * [Show More Products from a Vendor](#show-more-products-from-a-vendor)
 * [Strip empty tags from article excerpt](#strip-empty-tags-from-article-excerpt)
+* [Multiple currency selector](#multiple-currency-selector)
 
 ## Add Custom Badge on Products using product tag
 This code adds a limited badge on products with "limited" tag on them. Add this in product template.
@@ -212,6 +213,36 @@ $(document).ready( function() {
 Strip out empty p and span tags
 ```html
 {{ article.excerpt | strip_html }}
+```
+
+## Multiple currency selector
+
+```liquid
+{% form 'currency' %}
+  {{ form | currency_selector }}
+{% endform %}
+```
+
+```liquid
+{% form 'currency' %}
+  <select name="currency">
+    {% for currency in shop.enabled_currencies %}
+{% if currency == cart.currency %}
+  <option selected="true" value="{{ currency.iso_code }}">{{currency.iso_code}} {{currency.symbol}}</option>
+  {% else %}
+  <option value="{{ currency.iso_code }}">{{currency.iso_code}} {{currency.symbol}}</option>
+{% endif %}
+    {% endfor %}
+  </select>
+{% endform %}
+```
+
+```js
+$('.shopify-currency-form select').on('change', function() {
+  $(this)
+    .parents('form')
+    .submit();
+});
 ```
 
 ## License
